@@ -37,7 +37,6 @@ class CharDictPSClassifier:
     def get_pses_by_ps_names_list(db, ps_list_names):
         pses = []
         for ps_name in ps_list_names:
-            # !!! КОСТЫЛЬ НА ПРОФ 01.004
             if ps_name == '01.004':
                 continue
             ps = db['prof_standarts'].find_one({'code': ps_name})
