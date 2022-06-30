@@ -90,5 +90,9 @@ ROBOTSTXT_OBEY = True
 
 FEED_EXPORT_ENCODING = 'utf-8'
 ITEM_PIPELINES = {'parsing.pipelines.SimplePipeLine': 1}
+<<<<<<< HEAD
 MONGO_URI = ''
+=======
+MONGO_URI = 'mongodb+srv://admin:O7jqDyag3J6P96Bk@cluster0.oqvlg.mongodb.net/characteristics?ssl=true&ssl_cert_reqs=CERT_NONE'
+>>>>>>> 38e527c587424760d6258a83f5c511ab2040e861
 MONGO_DATABASE = 'characteristics'

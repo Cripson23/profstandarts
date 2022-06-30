@@ -14,13 +14,21 @@ from scrapy.exceptions import DropItem
 from scrapy.utils.project import get_project_settings
 settings = get_project_settings()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 38e527c587424760d6258a83f5c511ab2040e861
 class SimplePipeLine(object):
     direction = None
 
     def __init__(self):
+<<<<<<< HEAD
         self.mongo_uri = settings['MONGO_URI']
         self.mongo_db = settings['MONGO_DATABASE']
+=======
+        self.mongo_uri=settings['MONGO_URI']
+        self.mongo_db=settings['MONGO_DATABASE']
+>>>>>>> 38e527c587424760d6258a83f5c511ab2040e861
         
     def open_spider(self, spider):
         self.client = pymongo.MongoClient(self.mongo_uri)
@@ -38,9 +46,12 @@ class SimplePipeLine(object):
         self.client.close()
 
     def process_item(self, item, spider):
+<<<<<<< HEAD
         find_duplicate = None
         add_info = None
         collection_name = None
+=======
+>>>>>>> 38e527c587424760d6258a83f5c511ab2040e861
         if isinstance(item, ProfStandartItem):
             collection_name = 'prof_standarts'
             add_info = f"ПС: {item['code']}"
@@ -78,25 +89,40 @@ class SimplePipeLine(object):
 
 class FgosPipeLine(object):
     def __init__(self):
+<<<<<<< HEAD
         self.mongo_uri = settings['MONGO_URI']
         self.mongo_db = settings['MONGO_DATABASE']
+=======
+        self.mongo_uri=settings['MONGO_URI']
+        self.mongo_db=settings['MONGO_DATABASE']
+>>>>>>> 38e527c587424760d6258a83f5c511ab2040e861
         
     def open_spider(self, spider):
         self.client = pymongo.MongoClient(self.mongo_uri)
         self.db = self.client[self.mongo_db]
 
+<<<<<<< HEAD
         # collections = ['fgos', 'uk', 'opk']
         # Очистка всех коллекций
         # for collection_name in collections:
         #     self.db[collection_name].remove()
+=======
+        collections = ['fgos', 'uk', 'opk']
+        # Очистка всех коллекций
+        for collection_name in collections:
+            self.db[collection_name].remove()
+>>>>>>> 38e527c587424760d6258a83f5c511ab2040e861
 
     def close_spider(self, spider):
         self.client.close()
     
     def process_item(self, item, spider):
+<<<<<<< HEAD
         find_duplicate = None
         add_info = None
         collection_name = None
+=======
+>>>>>>> 38e527c587424760d6258a83f5c511ab2040e861
         if isinstance(item, FgosItem):
             collection_name = 'fgos'
             add_info = f"ФГОС: {item['code']}"
